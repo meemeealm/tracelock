@@ -1,0 +1,218 @@
+{
+ "note": "Recorded from demo.agent_scripted (seed 1234), NOT from a live Groq run. Replayed by tests via demo.fixtures_io.replay_fixture.",
+ "spans": [
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"path\": \"data.csv\"}, \"id\": \"call_1234_0\", \"name\": \"read_file\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 39,
+    "gen_ai.usage.output_tokens": 23
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000003dde",
+   "start_time_ns": 1794302010566155962
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"path\": \"data.csv\"}",
+    "gen_ai.tool.call.id": "call_1234_0",
+    "gen_ai.tool.call.result": "region,sales\nnorth,120\nsouth,80\neast,95",
+    "gen_ai.tool.name": "read_file"
+   },
+   "name": "execute_tool read_file",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000005ccd",
+   "start_time_ns": 1794302010568209253
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"path\": \"todo.md\"}, \"id\": \"call_1234_1\", \"name\": \"read_file\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 58,
+    "gen_ai.usage.output_tokens": 23
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000007bbc",
+   "start_time_ns": 1794302010569166519
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"path\": \"todo.md\"}",
+    "gen_ai.tool.call.id": "call_1234_1",
+    "gen_ai.tool.call.result": "- review ledger\n- rotate keys\n- email the auditor",
+    "gen_ai.tool.name": "read_file"
+   },
+   "name": "execute_tool read_file",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000009aab",
+   "start_time_ns": 1794302010570028484
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"path\": \"todo.md\"}, \"id\": \"call_1234_2\", \"name\": \"read_file\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 79,
+    "gen_ai.usage.output_tokens": 23
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "000000000000b99a",
+   "start_time_ns": 1794302010570926310
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"path\": \"todo.md\"}",
+    "gen_ai.tool.call.id": "call_1234_2",
+    "gen_ai.tool.call.result": "- review ledger\n- rotate keys\n- email the auditor",
+    "gen_ai.tool.name": "read_file"
+   },
+   "name": "execute_tool read_file",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "000000000000d889",
+   "start_time_ns": 1794302010588749414
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"path\": \"data.csv\"}, \"id\": \"call_1234_3\", \"name\": \"read_file\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 100,
+    "gen_ai.usage.output_tokens": 23
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "000000000000f778",
+   "start_time_ns": 1794302010589973653
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"path\": \"data.csv\"}",
+    "gen_ai.tool.call.id": "call_1234_3",
+    "gen_ai.tool.call.result": "region,sales\nnorth,120\nsouth,80\neast,95",
+    "gen_ai.tool.name": "read_file"
+   },
+   "name": "execute_tool read_file",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000011667",
+   "start_time_ns": 1794302010590822601
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"expression\": \"32 + 5\"}, \"id\": \"call_1234_4\", \"name\": \"calculator\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 119,
+    "gen_ai.usage.output_tokens": 25
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000013556",
+   "start_time_ns": 1794302010591554586
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"expression\": \"32 + 5\"}",
+    "gen_ai.tool.call.id": "call_1234_4",
+    "gen_ai.tool.call.result": "37",
+    "gen_ai.tool.name": "calculator"
+   },
+   "name": "execute_tool calculator",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000015445",
+   "start_time_ns": 1794302010592284339
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"37\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"path\": \"notes.txt\"}, \"id\": \"call_1234_5\", \"name\": \"read_file\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 128,
+    "gen_ai.usage.output_tokens": 24
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000017334",
+   "start_time_ns": 1794302010594664067
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"path\": \"notes.txt\"}",
+    "gen_ai.tool.call.id": "call_1234_5",
+    "gen_ai.tool.call.result": "Meeting notes: ship the audit report on Friday. Budget is 1200.",
+    "gen_ai.tool.name": "read_file"
+   },
+   "name": "execute_tool read_file",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "0000000000019223",
+   "start_time_ns": 1794302010595673848
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"37\"}, {\"role\": \"tool\", \"content\": \"Meeting notes: ship the audit report on Friday. Budget is 1200.\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "{\"tool_calls\": [{\"arguments\": {\"body\": \"Meeting notes: ship the audit report on Friday. Budget is 12\", \"subject\": \"update 6\", \"to\": \"auditor@example.com\"}, \"id\": \"call_1234_6\", \"name\": \"send_email_stub\"}]}",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 152,
+    "gen_ai.usage.output_tokens": 51
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "000000000001b112",
+   "start_time_ns": 1794302010596508952
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "execute_tool",
+    "gen_ai.tool.call.arguments": "{\"body\": \"Meeting notes: ship the audit report on Friday. Budget is 12\", \"subject\": \"update 6\", \"to\": \"auditor@example.com\"}",
+    "gen_ai.tool.call.id": "call_1234_6",
+    "gen_ai.tool.call.result": "{\"status\": \"queued\", \"message_id\": \"stub-38c755e8e09d\"}",
+    "gen_ai.tool.name": "send_email_stub"
+   },
+   "name": "execute_tool send_email_stub",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "000000000001d001",
+   "start_time_ns": 1794302010597370847
+  },
+  {
+   "attributes": {
+    "gen_ai.input.messages": "[{\"role\": \"system\", \"content\": \"You are a scripted demo agent.\"}, {\"role\": \"user\", \"content\": \"Summarise the files and do some sums, then email the auditor.\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"- review ledger\\n- rotate keys\\n- email the auditor\"}, {\"role\": \"tool\", \"content\": \"region,sales\\nnorth,120\\nsouth,80\\neast,95\"}, {\"role\": \"tool\", \"content\": \"37\"}, {\"role\": \"tool\", \"content\": \"Meeting notes: ship the audit report on Friday. Budget is 1200.\"}, {\"role\": \"tool\", \"content\": \"{\\\"status\\\": \\\"queued\\\", \\\"message_id\\\": \\\"stub-38c755e8e09d\\\"}\"}]",
+    "gen_ai.operation.name": "chat",
+    "gen_ai.output.messages": "Done after 7 tool calls.",
+    "gen_ai.request.model": "scripted-model-1",
+    "gen_ai.usage.input_tokens": 176,
+    "gen_ai.usage.output_tokens": 6
+   },
+   "name": "chat scripted-model-1",
+   "parent_span_id": "0000000000001eef",
+   "span_id": "000000000001eef0",
+   "start_time_ns": 1794302010598210165
+  },
+  {
+   "attributes": {
+    "gen_ai.operation.name": "invoke_agent",
+    "gen_ai.request.model": "scripted-model-1"
+   },
+   "name": "invoke_agent",
+   "parent_span_id": null,
+   "span_id": "0000000000001eef",
+   "start_time_ns": 1794302010566095134
+  }
+ ]
+}

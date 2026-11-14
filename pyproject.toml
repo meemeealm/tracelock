@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracelock"
+version = "0.1.0"
+description = "Tamper-evident accountability layer for AI agents: signed Merkle ledger, witness and standalone verifier."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "opentelemetry-api>=1.30,<2",
+    "opentelemetry-sdk>=1.30,<2",
+    "cryptography>=42",
+]
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+tracelock-verify = "tracelock.verify:main"
+tracelock-witness = "tracelock.witness:main"
+tracelock-report = "tracelock.report:main"
+
+[tool.setuptools.packages.find]
+include = ["tracelock*"]   # the demo, attacks and bench folders are repo-only

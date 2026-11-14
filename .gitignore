@@ -1,0 +1,27 @@
+# Secrets: never commit these
+.env
+*.key
+keys/
+witness_data/
+tracelock_data/
+
+# Generated output
+out/
+quickstart_out/
+*.db
+*.db-journal
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
