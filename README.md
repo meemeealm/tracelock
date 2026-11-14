@@ -1,6 +1,7 @@
 # TraceLock
 
-Tracelock is a minimal tamper-evident accountability layer for AI agents.
+Tracelock is a minimal tamper-evident accountability layer for AI agents.  
+View the demo https://tracelockapp.netlify.app/
 
 TraceLock is an OpenTelemetry `SpanProcessor` that takes `gen_ai.*` spans from an
 instrumented agent, signs them (Ed25519), and appends them to an RFC 6962 (Certificate
@@ -8,20 +9,11 @@ Transparency style) Merkle ledger. A separate **witness** cosigns signed tree he
 after checking consistency. A standalone **verifier** CLI then lets an auditor check an
 exported trace using only public keys and witnessed tree heads.
 
-```
-agent --spans--> TraceLockSpanProcessor --event--> Ledger (SQLite + Merkle tree)
-                                                     | signs each leaf (operator key)
-                                                     | signs STHs (log key)
-                                                     v
-                      Witness process (own key, own dir): checks log signature + consistency proof,
-                      cosigns, stores. Rejects forks/rollbacks with 409 and logs the evidence.
-                                                     |
- exported trace + public keys + witnessed STHs  --> verify.py (standalone) --> JSON result --> report.html
-```
+![system](docs/system.jfif)
 
 ## Architecture
 
-See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for components, data formats, the witness protocol and the verifier's checks.
+See [ARCHITECTURE.md](docs/Architecture.md) for components, data formats, the witness protocol and the verifier's checks.
 
 
 ## Setup
@@ -56,9 +48,9 @@ See [HOWTORUN.md](docs/HOWTORUN.md) for more.
 
 ## References
 
-1. Cygnux Labs. Tracekit: tamper-evident records of what your AI agents did (software, PyPI `tracekit-ai`). [https://pypi.org/project/tracekit-ai/1.2.0/](https://pypi.org/project/tracekit-ai/1.2.0/) . Documentation: [https://github.com/Cygnux-Labs/Tracekit/wiki/Concepts-Overview](https://github.com/Cygnux-Labs/Tracekit/wiki/Concepts-Overview) .
-2. ghostfactory-art. Span Chain: tamper-evident audit trail and deterministic replay for AI agents (software). [https://github.com/ghostfactory-art/spanchain](https://github.com/ghostfactory-art/spanchain) .
-3. Prismer AI. Signet: cryptographic receipts for AI agent tool calls (software). [https://github.com/prismer-ai/signet](https://github.com/prismer-ai/signet) .
+1. Cygnux Labs. Tracekit: tamper-evident records of what your AI agents did (software, PyPI `tracekit-ai`). Documentation: [https://github.com/Cygnux-Labs/Tracekit/wiki/Concepts-Overview](https://github.com/Cygnux-Labs/Tracekit/wiki/Concepts-Overview) .
+2. ghostfactory-art. Span Chain: tamper-evident audit trail and deterministic replay for AI agents . [https://github.com/ghostfactory-art/spanchain](https://github.com/ghostfactory-art/spanchain) .
+3. Prismer AI. Signet: cryptographic receipts for AI agent tool calls . [https://github.com/prismer-ai/signet](https://github.com/prismer-ai/signet) .
 4. hellothere012. NotaryOS: cryptographic receipt system for AI agent accountability (software). [https://github.com/hellothere012/notaryos](https://github.com/hellothere012/notaryos) .
 5. World-999-Labs. Proof Layer: cryptographic governance receipts for AI agents, MCP server and offline verifier (software). [https://github.com/World-999-Labs/proof-layer](https://github.com/World-999-Labs/proof-layer) .
 6. Sigil Notary: cryptographic audit trails for AI agents (software, PyPI). [https://pypi.org/project/sigil-notary/](https://pypi.org/project/sigil-notary/) .
@@ -68,11 +60,11 @@ See [HOWTORUN.md](docs/HOWTORUN.md) for more.
 10. Nian, Y., Yuan, A., Zhang, H., Li, J., Li, L., Hu, X., Wei, H., Xiao, X., Xiao, C., & Zhao, Y. Auditable Agents. arXiv:2604.05485, April 2026. [https://arxiv.org/abs/2604.05485](https://arxiv.org/abs/2604.05485)
 11. Du, Z., & Chen, Y. AUDITA: Certified Auditing and Causal Attribution of Adverse Outcomes in Autonomous Multi-Agent Systems. arXiv:2608.22160, August 2026. [https://arxiv.org/abs/2608.22160](https://arxiv.org/abs/2608.22160)
 12. Ojewale, V., Suresh, H., & Venkatasubramanian, S. Audit Trails for Accountability in Large Language Models. arXiv:2601.20727, January 2026. [https://arxiv.org/abs/2601.20727](https://arxiv.org/abs/2601.20727)
-13. What Did Your AI Agent Actually Do? Building a Tamper-Evident Audit Trail (blog article, HackerNoon). [https://hackernoon.com/what-did-your-ai-agent-actually-do-building-a-tamper-evident-audit-trail](https://hackernoon.com/what-did-your-ai-agent-actually-do-building-a-tamper-evident-audit-trail) .
-14. Building Verifiable AI Agent Audit Logs With Signed, Hash-Chained Records (blog article, HackerNoon). [https://hackernoon.com/building-verifiable-ai-agent-audit-logs-with-signed-hash-chained-record](https://hackernoon.com/building-verifiable-ai-agent-audit-logs-with-signed-hash-chained-record) .
+13. What Did Your AI Agent Actually Do? Building a Tamper-Evident Audit Trail . [https://hackernoon.com/what-did-your-ai-agent-actually-do-building-a-tamper-evident-audit-trail](https://hackernoon.com/what-did-your-ai-agent-actually-do-building-a-tamper-evident-audit-trail) .
+14. Building Verifiable AI Agent Audit Logs With Signed, Hash-Chained Records . [https://hackernoon.com/building-verifiable-ai-agent-audit-logs-with-signed-hash-chained-record](https://hackernoon.com/building-verifiable-ai-agent-audit-logs-with-signed-hash-chained-record) .
 15. Gravitee. Ledger anchoring for OpenTelemetry traces (article). [https://gravitee.io/corpus/gen-623/blockchain/ledger-anchoring-for-opentelemetry-traces.html](https://gravitee.io/corpus/gen-623/blockchain/ledger-anchoring-for-opentelemetry-traces.html) .
 
 
 ## More
 
-[ARCHITECTURE.md](docs/ARCHITECTURE.md) · [THREAT_MODEL.md](docs/THREAT_MODEL.md) · [SECURITY.md](docs/SECURITY.md) ·
+[ARCHITECTURE.md](docs/Architecture.md) · [THREAT_MODEL.md](docs/THREAT_MODEL.md) · [SECURITY.md](docs/SECURITY.md) ·
